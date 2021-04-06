@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <description>商品货源服务</description>
+    <description>商品库存服务</description>
 
     <artifactId>mall-ware</artifactId>
 
