@@ -18,6 +18,7 @@ import java.util.Map;
  * @author: gxz gongxuanzhang@foxmail.com
  **/
 @Repository
+@SuppressWarnings("unchecked")
 @Conditional(MongoCondition.class)
 public class MongoDBGeneratorDao implements GeneratorDao {
 

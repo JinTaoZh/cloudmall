@@ -9,7 +9,7 @@
 package io.renren.common.validator;
 
 import io.renren.common.exception.ParameterException;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * 数据校验

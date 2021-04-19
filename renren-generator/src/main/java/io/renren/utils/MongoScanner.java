@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
 /**
  * @author: gxz  514190950@qq.com
  **/
+@SuppressWarnings("unchecked")
 public class MongoScanner {
     private Logger logger = LoggerFactory.getLogger(getClass());
 

@@ -13,7 +13,6 @@ import com.github.pagehelper.PageHelper;
 import io.renren.config.MongoManager;
 import io.renren.dao.GeneratorDao;
 import io.renren.dao.MongoDBGeneratorDao;
-import io.renren.entity.mongo.MongoDefinition;
 import io.renren.factory.MongoDBCollectionFactory;
 import io.renren.utils.GenUtils;
 import io.renren.utils.PageUtils;
@@ -58,22 +57,24 @@ public class SysGeneratorService {
 
 
     public byte[] generatorCode(String[] tableNames) {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        ZipOutputStream zip = new ZipOutputStream(outputStream);
-        for (String tableName : tableNames) {
-            //查询表信息
-            Map<String, String> table = queryTable(tableName);
-            //查询列信息
-            List<Map<String, String>> columns = queryColumns(tableName);
-            //生成代码
-            GenUtils.generatorCode(table, columns, zip);
+        try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+             ZipOutputStream zip = new ZipOutputStream(outputStream)) {
+            for (String tableName : tableNames) {
+                //查询表信息
+                Map<String, String> table = queryTable(tableName);
+                //查询列信息
+                List<Map<String, String>> columns = queryColumns(tableName);
+                //生成代码
+                GenUtils.generatorCode(table, columns, zip);
+            }
+            if (MongoManager.isMongo()) {
+                GenUtils.generatorMongoCode(tableNames, zip);
+            }
+//            IOUtils.closeQuietly();
+            return outputStream.toByteArray();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        if (MongoManager.isMongo()) {
-            GenUtils.generatorMongoCode(tableNames, zip);
-        }
-
-
-        IOUtils.closeQuietly(zip);
-        return outputStream.toByteArray();
+        return null;
     }
 }
