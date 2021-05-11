@@ -26,10 +26,9 @@
         </repository>
     </repositories>
 
-
     <dependencies>
 
-        <!--简化实体类，用@Data代替getset方法-->
+        <!-- 简化实体类，用@Data代替getset方法 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -51,13 +50,13 @@
             <version>5.2.2.RELEASE</version>
         </dependency>
 
-
         <!-- 数据库驱动 https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-<!--        <dependency>-->
-<!--            <groupId>mysql</groupId>-->
-<!--            <artifactId>mysql-connector-java</artifactId>-->
-<!--            <version>8.0.18</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.18</version>
+        </dependency>
+
         <!--tomcat里一般都带-->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -66,17 +65,17 @@
             <scope>provided</scope>
         </dependency>
 
-<!--        &lt;!&ndash;配置中心&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash;注册中心&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>-->
-<!--        </dependency>-->
+        <!--配置中心-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
 
+        <!--注册中心-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
 
         <!-- mybatisPLUS-->
         <dependency>
@@ -106,6 +105,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>

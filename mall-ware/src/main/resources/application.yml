@@ -8,6 +8,14 @@ spring:
       url: jdbc:mysql://localhost:3306/gulimall_wms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
       username: root
       password: myuser
+  application:
+    name: cloud-mall-ware
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://127.0.0.1:8848
+        username: nacos
+        password: nacos
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
   configuration:
