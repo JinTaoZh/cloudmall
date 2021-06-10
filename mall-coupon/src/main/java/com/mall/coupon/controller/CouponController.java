@@ -1,19 +1,16 @@
 package com.mall.coupon.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.mall.coupon.entity.CouponEntity;
-import com.mall.coupon.service.CouponService;
 import com.mall.common.utils.PageUtils;
 import com.mall.common.utils.R;
+import com.mall.coupon.entity.CouponEntity;
+import com.mall.coupon.service.CouponService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 
 
@@ -29,6 +26,20 @@ import com.mall.common.utils.R;
 public class CouponController {
     @Autowired
     private CouponService couponService;
+
+
+    @GetMapping("/user")
+    public R getAllCouponByUser(){
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        CouponEntity coupon = new CouponEntity();
+        coupon.setCouponName("满减券");
+        return R.ok().put("coupon", Collections.singletonList(coupon));
+    }
+
 
     /**
      * 列表
