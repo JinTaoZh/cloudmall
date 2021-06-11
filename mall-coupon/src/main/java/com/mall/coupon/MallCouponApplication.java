@@ -10,6 +10,7 @@ import java.util.TimeZone;
  * @author zjt
  * @date 2021-04-14
  */
+
 @EnableDiscoveryClient
 @SpringBootApplication
 public class MallCouponApplication {
