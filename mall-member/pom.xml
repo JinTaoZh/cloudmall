@@ -37,7 +37,7 @@
             <scope>test</scope>
         </dependency>
         <!--        <dependency>-->
-        <!--            <groupId>com.zjt.mall</groupId>-->
+        <!--            <groupId>com.mall.mall</groupId>-->
         <!--            <artifactId>mall-product</artifactId>-->
         <!--            <scope>compile</scope>-->
         <!--        </dependency>-->

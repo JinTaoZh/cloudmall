@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: cloud-mail-gateway
+  cloud:
+    nacos:
+      config:
+        namespace: ecab110e-df8e-4513-9eca-97e261137598
+        server-addr: 127.0.0.1:8848
